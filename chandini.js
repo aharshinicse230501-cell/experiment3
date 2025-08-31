@@ -34,11 +34,11 @@ class HomePage extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.check),
-                  SizedBox(width: 90), // To have some gap
+                  SizedBox(width: 80), // To have some gap
                   Text('Some string 1')
                 ],
               ),
-              SizedBox(height: 80), // some gap
+              SizedBox(height: 90), // some gap
               Row(
                 children: [
                   SizedBox(
