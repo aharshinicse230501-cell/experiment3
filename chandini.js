@@ -34,58 +34,58 @@ class HomePage extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.check),
-                  SizedBox(width: 20), // To have some gap
+                  SizedBox(width: 90), // To have some gap
                   Text('Some string 1')
                 ],
               ),
-              SizedBox(height: 10), // some gap
+              SizedBox(height: 80), // some gap
               Row(
                 children: [
                   SizedBox(
-                      width: 100,
-                      height: 100,
+                      width: 700,
+                      height: 200,
                       child: Image.asset('assets/images/Img_Mobiles.jpg')),
-                  SizedBox(width: 20), // To have some gap
+                  SizedBox(width: 80), // To have some gap
                   Text('Some string 2')
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 60),
               Row(
                 children: [
                   Stack(
                     alignment: Alignment.center,
                     children: [
                       SizedBox(
-                        height: 60,
-                        width: 60,
+                        height: 1000,
+                        width: 80,
                         child: CircularProgressIndicator(
-                          value: 0.8,
-                          strokeWidth: 5,
+                          value: 0.9,
+                          strokeWidth: 9,
                           valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
                         ),
                       ),
-                      Icon(Icons.directions_walk, color: Colors.red, size: 28),
+                      Icon(Icons.directions_walk, color: Colors.red, size: 48),
                     ],
                   ),
-                  SizedBox(width: 20), // To have some gap
+                  SizedBox(width: 90), // To have some gap
                   Text('Some string 3')
                 ],
               ),
-              SizedBox(height: 10), // some gap
+              SizedBox(height: 70), // some gap
               Container(
-                width: 200,
-                height: 100,
-                padding: EdgeInsets.all(16),
-                margin: EdgeInsets.all(20),
+                width: 400,
+                height: 189,
+                padding: EdgeInsets.all(96),
+                margin: EdgeInsets.all(80),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Colors.blue,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(19),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black26,
-                      blurRadius: 8,
-                      offset: Offset(6, 6),
+                      blurRadius: 7,
+                      offset: Offset(9, 9),
                     ),
                   ],
                 ),
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
                   'Some string 4',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 19,
                   ),
                 ),
               ),
