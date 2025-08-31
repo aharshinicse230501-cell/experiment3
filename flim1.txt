@@ -1,0 +1,245 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp();
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  bool boldStyle = false;
+  bool italicStyle = false;
+  bool underlineStyle = false;
+  bool redColorStyle = false;
+  bool biggerSizeStyle = false;
+  static const int MobileDeviceWidthBreakpoint = 600; // pixels
+
+  void onPressedForBold() {
+    setState(() {
+      boldStyle = !boldStyle;
+    });
+  }
+
+  void onPressedForItalic() {
+    setState(() {
+      italicStyle = !italicStyle;
+    });
+  }
+
+  void onPressedForUnderline() {
+    setState(() {
+
+nderlineStyle = !underlineStyle;
+    });
+  }
+
+  void onPressedForRedColor() {
+    setState(() {
+      redColorStyle = !redColorStyle;
+    });
+  }
+
+  void onPressedForBiggerSize() {
+    setState(() {
+      biggerSizeStyle = !biggerSizeStyle;
+    });
+  }
+
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text('My App page'),
+        actions: [
+          if (!isPhoneDevice(context)) ...[
+            ElevatedButton(onPressed: onPressedForBold, child: Text('B')),
+            ElevatedButton(onPressed: onPressedForItalic, child: Text('I')),
+            ElevatedButton(
+                onPressed: onPressedForUnderline, child: Text('U')),
+            ElevatedButton(
+                onPressed: onPressedForRedColor, child: Text('RedColor')),
+            ElevatedButton(
+                onPressed: onPressedForBiggerSize, child: Text('Magnify')),
+          ]
+        ]
+      ),
+      
+
+body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text('Phone device',
+              style: TextStyle(
+                fontWeight: (boldStyle ? FontWeight.bold : FontWeight.normal),
+                fontStyle: (italicStyle ? FontStyle.italic : FontStyle.normal),
+                decoration: (underlineStyle ? TextDecoration.underline : TextDecoration.none),
+                color: (redColorStyle ? Colors.red : Colors.black),
+                fontSize: (biggerSizeStyle ? 20 : kDefaultFontSize),
+              ),
+            ),
+            isPhoneDevice(context) ? verticalAlignment() : horizontalAlignment(),
+            SizedBox(height: 10,), //  some gap
+            Text('Any comments/feedback?'),
+            TextField(
+                maxLines: 3,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                )
+            ),
+            SizedBox(height: 50,), // some gap finally.
+            Text('(c) some copy right information.'),
+            SizedBox(height: 100,), // some gap finally.
+          ],
+        ),
+      ),
+
+
+bottomNavigationBar: !isPhoneDevice(context) ? null :
+        Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(onPressed: onPressedForBold, child: Text('B')),
+              ElevatedButton(onPressed: onPressedForItalic, child: Text('I')),
+              ElevatedButton(
+                  onPressed: onPressedForUnderline, child: Text('U')),
+              ElevatedButton(
+                  onPressed: onPressedForRedColor, child: Text('RedColor')),
+              Flexible(
+                  child: ElevatedButton(
+                      onPressed: onPressedForBiggerSize, child: Text('Magnify')),
+              )
+            ]
+        )
+    );
+  }
+}
+
+Widget verticalAlignment()
+{
+  return Column (
+    children: [
+      Image.asset('assets/images/Img_Mobiles.jpg', width: 200, height: 200),
+      Text(
+        'Above is a phone device. I know, you know it already.',
+      )
+    ],
+  );
+}
+
+Widget horizontalAlignment()
+{
+  return Row (
+    children: [
+      Image.asset('assets/images/Img_Mobiles.jpg', width: 200, height: 200),
+
+
+      Text(
+        'Above is a phone device. I know, you know it already.',
+      )
+    ],
+  );
+}
+
+Widget horizontalAlignment()
+{
+  return Row (
+    children: [
+      Image.asset('assets/images/Img_Mobiles.jpg', width: 200, height: 200),
+[A[F[B[3~[3~[3~[3~[3~[3~[3~[3~[3~[3~[3~[3~[3~[3~[3~[3~[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[[A[F[B[F[C[C[C[C[C[C[C[A[C[C[C[C[C[C[A[F[B[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[
+Flexible(
+          child: Text(
+            'Above is a phone device. I know, you know it already. But said it, just in case you do not know it. Several people use it for just passing the time. ',
+          )
+      ),
+    ],
+  );
+}
+[A[A[A[A[A[A[A[A[A[F[B[C[C[C[A[C[C[C[C[A[C[C[C[[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[F[B[C[C[C[C[C[C[C[C[C[B[B[B[B[B[B[B[B[B[B[C[C[A[A[A[A[A[A[A[A[B[B[A[B[A[C[C[C[C[3~[A[C[C[C[C[C[A[C[C[C[A[C[C[C[C[[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[[A[A[A[A[A[A[A[A[A[A
+lexible(
+          child: Text(
+            'Above is a phone device. I know, you know it already. But said it, just in case you do not know it. Several people use it for just passing the time. ',
+          )
+      ),
+    ],
+  );
+}
+
+[A[A[A[A[A[A[A[A[AF[B[B[B[B[B[B[B
+[A[B[A[C[C[C[C[C[C[C
+[A[C[C[C[C[C[C[C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cflim1.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
