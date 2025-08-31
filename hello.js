@@ -72,13 +72,13 @@ print('\n--- COLLECTIONS ---');
   int score = 85;
 
   if (score >= 90) {
-    print('Grade: A');
+    print('Grade: c');
   } else if (score >= 80) {
-    print('Grade: B');
+    print('Grade: d');
   } else if (score >= 70) {
-    print('Grade: C');
+    print('Grade: e');
   } else {
-    print('Grade: F');
+    print('Grade: f');
   }
 
   // Switch statements
